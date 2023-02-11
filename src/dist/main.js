@@ -16,6 +16,9 @@ submitButton === null || submitButton === void 0 ? void 0 : submitButton.addEven
     const display = document.getElementById("display-container");
     display === null || display === void 0 ? void 0 : display.appendChild(outputElement);
     removeBtn.addEventListener("click", () => {
-        outputElement.innerHTML = "";
+        outputElement.innerHTML = "Data removed";
+        setTimeout(() => {
+            outputElement.innerHTML = "";
+        }, 5000);
     });
 });

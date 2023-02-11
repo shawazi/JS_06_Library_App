@@ -31,8 +31,14 @@ submitButton?.addEventListener("click", () => {
 
     display?.appendChild(outputElement);
 
+    // localStorage.setItem("isbn" + isbnInput, outputElement)
+
     removeBtn.addEventListener("click", () => {
-        outputElement.innerHTML = "";
+        outputElement.innerHTML = "Data removed";
+
+        setTimeout(() => {
+            outputElement.innerHTML = "";
+        }, 5000);
     });
 
 });
