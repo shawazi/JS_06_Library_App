@@ -1,7 +1,7 @@
 const submitButton = document.getElementById("submit-btn");
 
 submitButton?.addEventListener("click", () => {
-    console.log("test");
+    // console.log("test");
 
     const titleInput = (<HTMLInputElement>document.getElementById("title")).value;
 
@@ -15,12 +15,24 @@ submitButton?.addEventListener("click", () => {
 
     const info = document.createElement("p");
 
-    info.textContent = titleInput + " | " + authorInput + " | " + isbnInput + " | " + "X";
+    info.textContent = titleInput + " | " + authorInput + " | " + isbnInput;
+
+    const removeBtn = document.createElement("button");
+
+    removeBtn.setAttribute("id", "remove-btn");
+
+    removeBtn.textContent = "X";
 
     outputElement.appendChild(info);
+
+    outputElement.appendChild(removeBtn);
     
     const display = document.getElementById("display-container");
 
     display?.appendChild(outputElement);
+
+    removeBtn.addEventListener("click", () => {
+        outputElement.innerHTML = "";
+    });
 
 });
